@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div dir="rtl" class="tabsContainer">
+        <ul class="top" id="tagProvider">
+        </ul>
+        <ul class="bottom" id="tabProvider">
+            <li class="gallery select" id="tab12">
+                <div>
+                    <img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSh5kfXtVSigXKOpwkew7gfyzrzmOoJs3yKJw&amp;s">
+                </div>
+            </li>
+        </ul>
+
+    </div>
+
+</body>
+<script>
+    // console.log(new Date())
+    var nowSelectId = 1
+    const tabs = [
+        { id: 1, name: "عکس های مطب", color: "#555", select: "#3b00fd", type: "gallery", data: [{ id: 1, name: "", link: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSh5kfXtVSigXKOpwkew7gfyzrzmOoJs3yKJw&s" }, { id: 1, name: "", link: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSh5kfXtVSigXKOpwkew7gfyzrzmOoJs3yKJw&s" }, { id: 1, name: "", link: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSh5kfXtVSigXKOpwkew7gfyzrzmOoJs3yKJw&s" }, { id: 1, name: "", link: "https://www.clinik.ch/uploads-entities/clinic/608a699c97829658903613.png" }, { id: 1, name: "", link: "https://ghp-pulse.com/assets/resized/629-408-crop-t/uploads/clinics/beethoven-klinik.jpg" }, { id: 1, name: "", link: "https://www.clinik.ch/uploads-entities/clinic/608a699c97829658903613.png" }] }
+        , { id: 2, name: "گواهی ها", color: "#555", select: "#3b00fd", type: "timeLine", data: [{ id: 1, describe: "سلام من دکتر خدا هستم در تاریخ 3000 سال قبل میلاد گواهی داننشگاه اکسفورد را دریافت کردم با دزدی ! الا تخصص کشتار دارم", link: "https://marketplace.canva.com/EAF3lV78vig/1/0/1600w/canva-biru-emas-ornamen-klasik-sertifikat-penghargaan-kT1JTV7bIVQ.jpg", time: new Date() }, { id: 1, describe: "سلام من دکتر خدا هستم در تاریخ 3000 سال قبل میلاد گواهی داننشگاه اکسفورد را دریافت کردم با دزدی ! الا تخصص کشتار دارم", link: "https://marketplace.canva.com/EAF3lV78vig/1/0/1600w/canva-biru-emas-ornamen-klasik-sertifikat-penghargaan-kT1JTV7bIVQ.jpg", time: new Date() }, { id: 1, describe: "سلام من دکتر خدا هستم در تاریخ 3000 سال قبل میلاد گواهی داننشگاه اکسفورد را دریافت کردم با دزدی ! الا تخصص کشتار دارم", link: "https://marketplace.canva.com/EAF3lV78vig/1/0/1600w/canva-biru-emas-ornamen-klasik-sertifikat-penghargaan-kT1JTV7bIVQ.jpg", time: new Date() }] }
+    ]
+
+
+
+
+
+    function createTabs(data) {
+        data.forEach(element => {
+            // console.log(element)
+            addTag(element.name, element.id, element.color);
+            switch (element.type) {
+                case "gallery":
+                    gallery(element.data, element.id)
+                    break;
+                case "timeLine":
+                    timeLine(element.data, element.id)
+                    break;
+
+                default:
+                    console.log("We Aren't Handle This Type Of Tab")
+                    break;
+            }
+
+        });
+
+    }
+
+
+    function addTag(name, id, color) {
+
+        let tag = document.createElement("li")
+        tag.innerHTML = name
+        tag.id = "tagChild" + id
+        if (nowSelectId == id) {
+            tag.className = "select";
+        }
+        tag.addEventListener("click", () => { changeTab(id) })
+        let tagsProvider = document.getElementById("tagProvider")
+        tagsProvider.appendChild(tag)
+    }
+    createTabs(tabs)
+    function gallery(data, id) {
+        let provider = document.getElementById("tabProvider")
+        let tab = document.createElement("li");
+        // tab.innerHTML= JSON.stringify(data)
+        tab.className = "gallery"
+        tab.id = "tab" + id
+        data.forEach(el => {
+            let image = document.createElement("img")
+            image.src = el.link
+            tab.appendChild(image)
+        })
+        if (nowSelectId == id) {
+            tab.className = "select gallery";
+        }
+        provider.appendChild(tab)
+
+
+    }
+    function timeLine(data, id) {
+        let provider = document.getElementById("tabProvider")
+        let tab = document.createElement("li");
+        // tab.innerHTML= JSON.stringify(data)
+        tab.className = "timeLine"
+        tab.id = "tab" + id
+        data.forEach(el => {
+            //time part
+            let pr = document.createElement("div")
+            let time = document.createElement("div")
+            let sp1 = document.createElement("span")
+            let sp2 = document.createElement("span")
+            let timer = document.createElement("h3")
+            //text & img part
+            let dPr = document.createElement("div")
+            let text = document.createElement("p");
+            let img = document.createElement("img");
+            text.innerHTML = el.describe
+            dPr.className = "content"
+            img.src = el.link
+
+            dPr.appendChild(text)
+            dPr.appendChild(img)
+            timer.innerHTML = new Date(el.time).getFullYear()
+            time.className = "time"
+
+            time.appendChild(sp1)
+            time.appendChild(timer)
+            time.appendChild(sp2)
+            pr.appendChild(time)
+            pr.appendChild(dPr)
+            tab.appendChild(pr)
+
+        })
+
+        if (nowSelectId == id) {
+            tab.className = "select timeLine";
+        }
+        provider.appendChild(tab)
+
+    }
+    function changeTab(id) {
+
+        let tag = document.getElementById("tagChild" + id)
+        let ptag = document.getElementById("tagChild" + nowSelectId)
+        tag.className = "select"
+        ptag.className = ""
+
+
+
+
+        let tab = document.getElementById("tab" + id)
+        let ptab = document.getElementById("tab" + nowSelectId)
+        tab.className = tabs.find(el => el.id == id).type + " select"
+        ptab.className = tabs.find(el => el.id == nowSelectId).type
+        nowSelectId = id
+    }
+</script>
+
+</html>

@@ -1,0 +1,116 @@
+body{
+    padding-right: 380px;
+    padding-left: 100px;
+
+}
+
+.tabsContainer {
+
+    padding: 2px;
+
+}
+
+.tabsContainer>.top {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+
+}
+.tabsContainer>.top .select{
+
+    color: #0004ff;
+}
+.tabsContainer>.top>li {
+    padding: 0 20px;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+    /* backgroupxnd: #923030; */
+}
+
+.tabsContainer>.bottom {
+    list-style: none;
+
+    border-radius: 20px;
+
+}
+.tabsContainer>.bottom .select {
+    display: block;
+    border-radius: 20px;
+}
+.tabsContainer>.bottom li {
+    overflow: hidden;
+    background: #0071DC;
+    padding: 20px; 
+    display: none;
+
+}
+
+.tabsContainer>.bottom .gallery.select {
+    display: flex;
+    border-radius: 20px;
+}
+.gallery {
+    display: flex;
+    justify-content: space-around;
+    flex-flow: wrap;
+    padding: 20px;
+    gap: 25px;
+}
+
+.gallery>img {
+    width: 500px;
+    height: 270px;
+    border-radius: 10px;
+    cursor: pointer;
+    /* filter: brightness(0.7) */
+}
+
+ul {
+    
+    list-style: none;
+}
+
+
+
+.timeLine>div{
+    display: flex;
+    width: 50%;
+    height: 500px;
+}
+.timeLine>div >.content{
+     display: flex;
+    gap: 5px;
+    align-items: center;   
+}
+.timeLine>div>.content>img{
+    width: 500px;
+}
+.timeLine>div >.time{
+    display: flex;
+    flex-flow: column;
+    /* height: fit-content; */
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background: #000;
+
+}
+.timeLine>div >div>span{
+    height: 50%;
+    border-right: 1px solid;
+    width: 0.25px;
+}
+.timeLine>div >div>h3{
+    border: 1px solid;
+    text-align: center;
+    line-height: 50px;
+    margin: 0;
+    height: 50px;
+    width: 50px !important;
+    border-radius: 10000px;
+}
+
+.timeLine>div  p{
+    width: 20%;
+}
