@@ -1,4 +1,4 @@
-body{
+body {
     padding-right: 380px;
     padding-left: 100px;
 
@@ -16,10 +16,12 @@ body{
     gap: 10px;
 
 }
-.tabsContainer>.top .select{
+
+.tabsContainer>.top .select {
 
     color: #0004ff;
 }
+
 .tabsContainer>.top>li {
     padding: 0 20px;
     font-size: 22px;
@@ -34,14 +36,16 @@ body{
     border-radius: 20px;
 
 }
+
 .tabsContainer>.bottom .select {
     display: block;
     border-radius: 20px;
 }
+
 .tabsContainer>.bottom li {
     overflow: hidden;
     background: #0071DC;
-    padding: 20px; 
+    padding: 20px;
     display: none;
 
 }
@@ -50,6 +54,7 @@ body{
     display: flex;
     border-radius: 20px;
 }
+
 .gallery {
     display: flex;
     justify-content: space-around;
@@ -58,35 +63,50 @@ body{
     gap: 25px;
 }
 
+.gallery>div {
+    /* overflow: hidden; */
+    position: relative;
+}
+
+
+
+.gallery>img:hover {
+    filter: brightness(1);
+}
+
 .gallery>img {
     width: 500px;
     height: 270px;
+    transition-duration: 300ms;
     border-radius: 10px;
     cursor: pointer;
-    /* filter: brightness(0.7) */
+    filter: brightness(0.7)
 }
 
 ul {
-    
+
     list-style: none;
 }
 
 
 
-.timeLine>div{
+.timeLine>div {
     display: flex;
     width: 50%;
     height: 500px;
 }
-.timeLine>div >.content{
-     display: flex;
+
+.timeLine>div>.content {
+    display: flex;
     gap: 5px;
-    align-items: center;   
+    align-items: center;
 }
-.timeLine>div>.content>img{
+
+.timeLine>div>.content>img {
     width: 500px;
 }
-.timeLine>div >.time{
+
+.timeLine>div>.time {
     display: flex;
     flex-flow: column;
     /* height: fit-content; */
@@ -96,12 +116,14 @@ ul {
     background: #000;
 
 }
-.timeLine>div >div>span{
+
+.timeLine>div>div>span {
     height: 50%;
     border-right: 1px solid;
     width: 0.25px;
 }
-.timeLine>div >div>h3{
+
+.timeLine>div>div>h3 {
     border: 1px solid;
     text-align: center;
     line-height: 50px;
@@ -111,6 +133,6 @@ ul {
     border-radius: 10000px;
 }
 
-.timeLine>div  p{
+.timeLine>div p {
     width: 20%;
 }
