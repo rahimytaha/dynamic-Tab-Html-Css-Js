@@ -1,9 +1,3 @@
-body {
-    padding-right: 380px;
-    padding-left: 100px;
-
-}
-
 .tabsContainer {
 
     padding: 2px;
@@ -32,8 +26,8 @@ body {
 
 .tabsContainer>.bottom {
     list-style: none;
+    border-top: 2px solid #0004ff;
 
-    border-radius: 20px;
 
 }
 
@@ -44,7 +38,7 @@ body {
 
 .tabsContainer>.bottom li {
     overflow: hidden;
-    background: #2d98fc75;
+    /* background: #2d98fc75; */
     padding: 20px;
     display: none;
 
@@ -100,15 +94,15 @@ ul {
 .timeLine>div>.content {
     display: flex;
     gap: 5px;
-    justify-content: space-between;
+    /* justify-content: space-k; */
     align-items: center;
 }
 
 .timeLine>div>.content>img {
     width: 500px;
     border-radius: 12px;
+    margin-right: 15px;
     box-shadow: 0 0 40px 0 #0079ebad
-
 }
 
 .timeLine>div>.time {
@@ -146,4 +140,28 @@ ul {
     line-height: 130%;
     font-size: 20px;
     width: 50%;
+}
+
+@media screen and (max-width:768px) {
+    #tabProvider {
+        padding-right: 0;
+    }
+
+    .timeLine>div>.content>img {
+        width: 270px;
+    }.timeLine>div>.content {
+        display: block;
+    }
+    .timeLine>div p {
+        width: 90%;
+        margin:  0 auto;
+        font-size: 19px;
+    }
+    .gallery>img {
+        width: 300px;
+        height: 220px;
+    }
+
+        
+
 }

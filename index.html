@@ -13,7 +13,7 @@
         <ul class="top" id="tagProvider">
         </ul>
         <ul class="bottom" id="tabProvider">
-        
+
         </ul>
 
     </div>
@@ -21,10 +21,10 @@
 </body>
 <script>
     // console.log(new Date())
-    var nowSelectId = 2
+    var nowSelectId = 1
     const tabs = [
         { id: 1, name: "عکس های مطب", color: "#555", select: "#3b00fd", type: "gallery", data: [{ id: 1, name: "", link: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSh5kfXtVSigXKOpwkew7gfyzrzmOoJs3yKJw&s" }, { id: 1, name: "", link: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSh5kfXtVSigXKOpwkew7gfyzrzmOoJs3yKJw&s" }, { id: 1, name: "", link: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSh5kfXtVSigXKOpwkew7gfyzrzmOoJs3yKJw&s" }, { id: 1, name: "", link: "https://www.clinik.ch/uploads-entities/clinic/608a699c97829658903613.png" }, { id: 1, name: "", link: "https://ghp-pulse.com/assets/resized/629-408-crop-t/uploads/clinics/beethoven-klinik.jpg" }, { id: 1, name: "", link: "https://www.clinik.ch/uploads-entities/clinic/608a699c97829658903613.png" }] }
-        , { id: 2, name: "گواهی ها", color: "#555", select: "#3b00fd", type: "timeLine", data: [ { id: 1, describe:"Next.jsیک فریمورک برای React است که به توسعه‌دهندگان امکاناتی نظیر رندر سمت سرور، مسیریابی ساده، و بهینه‌سازی‌های پیش‌فرض را فراهم می‌کند. این فریمورک توسط شرکت Vercel توسعه یافته است و یکی از ابزارهای محبوب برای ساختن برنامه‌های کاربردی تحت وب پویا و پرسرعت محسوب می‌شود.", link: "https://marketplace.canva.com/EAF3lV78vig/1/0/1600w/canva-biru-emas-ornamen-klasik-sertifikat-penghargaan-kT1JTV7bIVQ.jpg", time: new Date("1/1/1900") }, { id: 1, describe:"Next.jsیک فریمورک برای React است که به توسعه‌دهندگان امکاناتی نظیر رندر سمت سرور، مسیریابی ساده، و بهینه‌سازی‌های پیش‌فرض را فراهم می‌کند. این فریمورک توسط شرکت Vercel توسعه یافته است و یکی از ابزارهای محبوب برای ساختن برنامه‌های کاربردی تحت وب پویا و پرسرعت محسوب می‌شود.", link: "https://marketplace.canva.com/EAF3lV78vig/1/0/1600w/canva-biru-emas-ornamen-klasik-sertifikat-penghargaan-kT1JTV7bIVQ.jpg", time: new Date() }] }
+        , { id: 2, name: "گواهی ها", color: "#555", select: "#3b00fd", type: "timeLine", data: [{ id: 1, describe: "Next.jsیک فریمورک برای React است که به توسعه‌دهندگان امکاناتی نظیر رندر سمت سرور، مسیریابی ساده، و بهینه‌سازی‌های پیش‌فرض را فراهم می‌کند. این فریمورک توسط شرکت Vercel توسعه یافته است و یکی از ابزارهای محبوب برای ساختن برنامه‌های کاربردی تحت وب پویا و پرسرعت محسوب می‌شود.", link: "https://marketplace.canva.com/EAF3lV78vig/1/0/1600w/canva-biru-emas-ornamen-klasik-sertifikat-penghargaan-kT1JTV7bIVQ.jpg", time: new Date("1/1/1900") }, { id: 1, describe: "Next.jsیک فریمورک برای React است که به توسعه‌دهندگان امکاناتی نظیر رندر سمت سرور، مسیریابی ساده، و بهینه‌سازی‌های پیش‌فرض را فراهم می‌کند. این فریمورک توسط شرکت Vercel توسعه یافته است و یکی از ابزارهای محبوب برای ساختن برنامه‌های کاربردی تحت وب پویا و پرسرعت محسوب می‌شود.", link: "https://marketplace.canva.com/EAF3lV78vig/1/0/1600w/canva-biru-emas-ornamen-klasik-sertifikat-penghargaan-kT1JTV7bIVQ.jpg", time: new Date() }] }
     ]
     function createTabs(data) {
         data.forEach(element => {
@@ -97,9 +97,9 @@
             text.innerHTML = el.describe
             dPr.className = "content"
             img.src = el.link
-
-            dPr.appendChild(text)
             dPr.appendChild(img)
+            dPr.appendChild(text)
+
             timer.innerHTML = new Date(el.time).getFullYear()
             time.className = "time"
 
